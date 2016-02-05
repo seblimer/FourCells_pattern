@@ -1,0 +1,52 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FourCells_pattern {
+	class TFourU : Block {
+		public override void region(int[] region, int point) {
+			region[0] = point;
+			region[1] = point + convert;
+			region[2] = point + convert - 1;
+			region[3] = point + convert + 1;
+		}
+		public override byte[] areaNum() {
+			return new byte[] { 3, 1, 3, 3 };
+		}
+	}
+	class TFourR : Block {
+		public override void region(int[] region, int point) {
+			region[0] = point;
+			region[1] = point + convert;
+			region[2] = point + convert + 1;
+			region[3] = point + 2 * convert;
+		}
+		public override byte[] areaNum() {
+			return new byte[] { 3, 1, 3, 3 };
+		}
+	}
+	class TFourD : Block {
+		public override void region(int[] region, int point) {
+			region[0] = point;
+			region[1] = point + 1;
+			region[2] = point + 2;
+			region[3] = point + convert + 1;
+		}
+		public override byte[] areaNum() {
+			return new byte[] { 3, 1, 3, 3 };
+		}
+	}
+	class TFourL : Block {
+		public override void region(int[] region, int point) {
+			region[0] = point;
+			region[1] = point + convert;
+			region[2] = point + convert - 1;
+			region[3] = point + 2 * convert;
+		}
+		public override byte[] areaNum() {
+			return new byte[] { 3, 1, 3, 3 };
+		}
+	}
+}
